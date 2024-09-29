@@ -35,3 +35,36 @@ themeToggleButton.addEventListener("change", switchTheme);
 
 // Carregar o tema ao iniciar
 loadTheme();
+
+@media screen and (max-width:760px){
+    header{
+        flex-direction: column;
+    }
+
+    main{
+        flex-direction: column;
+
+    }
+
+    h2{
+        font-size: 38px;
+    }
+
+    form{
+        margin: 0 auto;
+        width: 100%;
+        
+    }
+
+    input{
+        align-self: center;
+    }
+
+    img{
+        display: none;
+    }
+
+    ul{
+        text-align: center;
+    }
+}
