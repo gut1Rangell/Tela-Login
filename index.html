@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="login-box">
+        <div class="theme-switch" aria-label="Alternar tema">
+            <input type="checkbox" id="theme-toggle" aria-hidden="true" />
+            <label for="theme-toggle" class="switch"></label>
+        </div>
+        <h1>Bem-vindo</h1>
+        <form action="#" method="post" aria-labelledby="login-title">
+            <h2 id="login-title">Faça seu login</h2>
+            <label for="username" class="visually-hidden"></label>
+            <input type="text" id="username" placeholder="Usuário" required />
+            <label for="password" class="visually-hidden"></label>
+            <input type="password" id="password" placeholder="Senha" required />
+            <button id="login-button" type="submit">Login</button>
+        </form>
+    </main>    
+
+    <script src="script.js"></script>
+</body>
+</html>
+
