@@ -1,0 +1,179 @@
+:root {
+    --background-light: #e8f5e9; /* Verde claro */
+    --background-dark: #121212; /* Escuro mais suave */
+    --text-light: #333333;
+    --text-dark: #ffffff;
+    --button-light: #4CAF50;
+    --button-dark: #3e8e41;
+    --input-border-light: #a5d6a7; /* Borda em verde mais claro */
+    --input-border-dark: #666; /* Borda escura mais suave */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-box {
+    padding: 2.5em;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    background-color: #a4e7a6; /* Cor de fundo da caixa de login em verde claro */
+    transition: background-color 0.3s;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 400px; /* Limita a largura máxima da caixa de login */
+}
+
+/* Títulos */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: var(--text-light);
+    transition: color 0.3s;
+    background-color: #c8e6c9; /* Cor de fundo do h1 no modo claro */
+    padding: 0.5em; /* Padding para espaçamento */
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    color: var(--text-light);
+    background-color: #c8e6c9; /* Cor de fundo do h2 no modo claro */
+    padding: 0.5em; /* Padding para espaçamento */
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 0.8em;
+    margin: 0.5em 0;
+    border: 1px solid var(--input-border-light);
+    border-radius: 8px;
+    transition: border-color 0.3s, background-color 0.3s;
+    font-size: 1em;
+}
+
+input:focus {
+    border-color: var(--button-light);
+    outline: none; /* Remove o contorno padrão */
+}
+
+/* Botões */
+button {
+    display: inline-block; /* Para centralizar o botão */
+    width: auto; /* Para que o botão não ocupe toda a largura */
+    padding: 0.75em 1.5em; /* Aumentado para maior tamanho */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    font-size: 1em; /* Aumentado para melhor legibilidade */
+    background-color: var(--button-light);
+    color: var(--text-light);
+}
+
+button:hover {
+    background-color: var(--button-dark);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Modo escuro */
+.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.dark-mode .login-box {
+    background-color: #1e1e1e; /* Cor da caixa no modo escuro */
+}
+
+.dark-mode input {
+    border: 1px solid var(--input-border-dark);
+    background-color: #333; /* Cor do fundo do input no modo escuro */
+    color: var(--text-dark);
+}
+
+.dark-mode h1 {
+    background-color: #2c2c2c; /* Cor de fundo do h1 no modo escuro */
+    padding: 0.5em; /* Padding para espaçamento */
+}
+
+.dark-mode h2 {
+    background-color: #2c2c2c; /* Cor de fundo do h2 no modo escuro */
+    padding: 0.5em; /* Padding para espaçamento */
+}
+
+.dark-mode button {
+    background-color: var(--button-dark);
+    color: var(--text-dark);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Tamanho reduzido em telas menores */
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .login-box {
+        padding: 2em;
+    }
+}
+
+/* Switch para mudar tema */
+.theme-switch {
+    position: absolute;
+    top: 1em;
+    right: 1em; /* Posiciona o switch no canto superior direito */
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch {
+    position: relative;
+    cursor: pointer;
+    width: 50px; /* Aumenta a largura do switch */
+    height: 26px; /* Aumenta a altura do switch */
+    background-color: #ccc; /* Cor padrão */
+    border-radius: 34px;
+    transition: background-color 0.4s;
+}
+
+.switch:before {
+    position: absolute;
+    content: "";
+    height: 22px; /* Aumenta a altura do botão */
+    width: 22px; /* Aumenta a largura do botão */
+    left: 2px; /* Ajusta a posição do botão */
+    bottom: 2px; /* Ajusta a posição do botão */
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .switch {
+    background-color: var(--button-light); /* Cor quando ativado */
+}
+
+input:checked + .switch:before {
+    transform: translateX(24px); /* Ajusta o movimento do botão */
+}
